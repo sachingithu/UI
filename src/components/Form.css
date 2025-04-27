@@ -1,0 +1,12 @@
+.add-form{
+    color: deeppink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.btn{
+    color: chocolate;
+    background-color:dimgray;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

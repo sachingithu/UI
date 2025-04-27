@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import Form from './components/Form';
+import Items from './components/Items';
+import Logo from './components/Logo';
+import PackagingList from './components/PackagingList';
+import Stats from './components/Stats';
+import { useState } from 'react';
+const initialization=[
+  {id:1, description:"Passport", quantity:2,packed:false},
+  {id:2, description:"Socks", quantity:12,packed:false},
+  {id:3, description:"Charger", quantity:5,packed:false},
+  {id:4, description:"Boarding Pass", quantity:1,packed:false},
+  
+]
 function App() {
+  const [items, setItems] = useState([]);
+
+  function handleAddItem(item){
+    setItems((items)=>[...items,item])
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Logo/>
+      <Form onAddItems={handleAddItem}/>
+       <PackagingList props={items}/>
+      <Stats/>
+      {/* <Items value={initialization}/> */}
+      </>
   );
 }
 
