@@ -8,7 +8,7 @@ const PackagingList = ({ props }) => {
           <li key={item.id}>
             {item.quantity}
             {item.description}
-            <button>🚫</button>
+            <button>❌</button>
           </li>
         ))}
       </ul>
