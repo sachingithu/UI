@@ -1,6 +1,6 @@
 import React from 'react'
 import './PackagingList.css'
-const PackagingList = ({ props }) => {
+const PackagingList = ({ props,onDeleteItem }) => {
   return (
     <div className='list'>
       <ul>
@@ -8,7 +8,7 @@ const PackagingList = ({ props }) => {
           <li key={item.id}>
             {item.quantity}
             {item.description}
-            <button>🚫</button>
+            <button onClick={()=>onDeleteItem(item.id)}>🚫</button>
           </li>
         ))}
       </ul>

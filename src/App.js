@@ -19,11 +19,15 @@ function App() {
   function handleAddItem(item){
     setItems((items)=>[...items,item])
   }
+  function handleDeleteItem(id){
+  //this is for deleting the item
+  setItems((item)=>items.filter(item=>item.id!=id))
+  }
   return (
     <>
       <Logo/>
       <Form onAddItems={handleAddItem}/>
-       <PackagingList props={items}/>
+       <PackagingList props={items} onDeleteItem={handleDeleteItem}/>
       <Stats/>
       {/* <Items value={initialization}/> */}
       </>
